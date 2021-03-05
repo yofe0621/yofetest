@@ -1,0 +1,25 @@
+{
+	"name": "Webhook",
+	"properties": {
+		"activities": [
+			{
+				"name": "WebHook1",
+				"type": "WebHook",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://0d6049c9-f75f-48dd-a66f-da8eaa484355.webhook.eus.azure-automation.net/webhooks?token=sK9oVRaLYXj6r1i44CwojOW90ER8EZYW9a69TCGG%2bP4%3d",
+					"method": "POST",
+					"body": {
+						"callBackUri": "https://PMsoutheastasia.svc.datafactory.azure.com/workflow/callback/##RUNID##?callbackUrl=##TOKEN##"
+					},
+					"timeout": "00:02:00",
+					"reportStatusOnCallBack": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-10-23T02:15:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

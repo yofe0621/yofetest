@@ -1,0 +1,92 @@
+{
+	"name": "SqlServerTablePerf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "UPi_Identity",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "UPz_Inv_Mgr",
+				"type": "char"
+			},
+			{
+				"name": "UPc_Confirmed",
+				"type": "char"
+			},
+			{
+				"name": "UPz_Spare",
+				"type": "char"
+			},
+			{
+				"name": "UPz_Mod_User",
+				"type": "char"
+			},
+			{
+				"name": "UPd_Mod_Date",
+				"type": "date"
+			},
+			{
+				"name": "UPt_Mod_Time",
+				"type": "time",
+				"scale": 2
+			},
+			{
+				"name": "UPd_Effective",
+				"type": "date"
+			},
+			{
+				"name": "UPf_Buy_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Sell_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Yield",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Hard_Buy_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Hard_Sell_Price",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Fee_Factor",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Admin_Fee_Factor",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "UPf_Indrt_Cost_Ratio",
+				"type": "float",
+				"precision": 15
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "InvMgr_UnitPrice_Hst"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

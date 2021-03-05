@@ -1,0 +1,26 @@
+{
+	"name": "GoogleBigQuery1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "GoogleBigQuery",
+		"typeProperties": {
+			"project": "nyctaxi-202616",
+			"requestGoogleDriveScope": false,
+			"authenticationType": "UserAuthentication",
+			"clientId": "99783912823-tk8crnolfnucm7n7cllpub0ls7bcmjdt.apps.googleusercontent.com",
+			"clientSecret": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "BigQueryClientSecret",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "Secret"
+			},
+			"refreshToken": {
+				"type": "SecureString",
+				"value": "**********"
+			}
+		}
+	}
+}

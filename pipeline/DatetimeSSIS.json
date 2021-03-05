@@ -1,0 +1,49 @@
+{
+	"name": "DatetimeSSIS",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute SSIS package1",
+				"type": "ExecuteSSISPackage",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"packageLocation": {
+						"packagePath": "DatetimeTest/Integration Services Project1/DatetimeTest.dtsx",
+						"type": "SSISDB"
+					},
+					"environmentPath": null,
+					"connectVia": {
+						"referenceName": "yofeSSISIR",
+						"type": "IntegrationRuntimeReference"
+					},
+					"loggingLevel": "Basic",
+					"packageParameters": {
+						"Parameter": {
+							"value": {
+								"value": "@pipeline().parameters.Parameter",
+								"type": "Expression"
+							}
+						}
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Parameter": {
+				"type": "string",
+				"defaultValue": "10/14/2020"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-02-04T09:36:49Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
