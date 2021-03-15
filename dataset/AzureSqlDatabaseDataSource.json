@@ -1,6 +1,7 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "AzureSqlDatabaseDataSource",
 	"properties": {
+		"description": "Connection to your data source store.",
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase1",
 			"type": "LinkedServiceReference"
@@ -9,8 +10,8 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "SalesLT",
-			"table": "SalesOrderDetail"
+			"schema": "dbo",
+			"table": ""
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

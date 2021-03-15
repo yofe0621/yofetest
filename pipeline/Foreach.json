@@ -1,0 +1,92 @@
+{
+	"name": "Foreach",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.test",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "ID",
+								"value": {
+									"value": "@item().ID",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Set variable2",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "Set variable1",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Name",
+								"value": {
+									"value": "@item().Name",
+									"type": "Expression"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"test": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"ID": "1",
+						"Name": "A"
+					},
+					{
+						"ID": "2",
+						"Name": "B"
+					},
+					{
+						"ID": "3",
+						"Name": "C"
+					},
+					{
+						"ID": "4",
+						"Name": "D"
+					},
+					{
+						"ID": "5",
+						"Name": "E"
+					}
+				]
+			}
+		},
+		"variables": {
+			"ID": {
+				"type": "String"
+			},
+			"Name": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-03-15T03:18:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
