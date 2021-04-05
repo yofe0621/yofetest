@@ -28,7 +28,7 @@
 						"Content-Type": "application/json"
 					},
 					"body": {
-						"value": "{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"PipelineRunID\": \"@{pipeline().RunId}\",\n   \"Subject\": \"The pipeline has completed successfully\",\n   \"ErrorMessage\": \"@{activity('Stored procedure1').output.error.Message}\",\n    \"Activity\": \"Test\",\n   \"EmailTo\": \"yofe@microsoft.com\"\n}",
+						"value": "{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"PipelineRunID\": \"@{pipeline().RunId}\",\n   \"Subject\": \"The pipeline has completed successfully\",\n   \"ErrorMessage\": \"@{activity('Stored procedure1').error.Message}\",\n    \"Activity\": \"Test\",\n   \"EmailTo\": \"yofe@microsoft.com\"\n}",
 						"type": "Expression"
 					}
 				}
