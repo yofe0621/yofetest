@@ -1,0 +1,78 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "yofeadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"GoogleBigQuery1_refreshToken": {
+			"value": ""
+		},
+		"Oracle1_connectionString": {
+			"value": ""
+		},
+		"SalesforceMarketingCloud1_connectionProperties_clientSecret": {
+			"value": ""
+		},
+		"Sftp1_password": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://yofeblobacct.dfs.core.windows.net"
+		},
+		"BigQueryClientSecret_properties_typeProperties_baseUrl": {
+			"value": "https://yofeBigQueryClientSecret.vault.azure.net/"
+		},
+		"GoogleBigQuery1_properties_typeProperties_clientId": {
+			"value": "99783912823-tk8crnolfnucm7n7cllpub0ls7bcmjdt.apps.googleusercontent.com"
+		},
+		"Sftp1_properties_typeProperties_host": {
+			"value": "1"
+		},
+		"Sftp1_properties_typeProperties_hostKeyFingerprint": {
+			"value": "1"
+		},
+		"Sftp1_properties_typeProperties_userName": {
+			"value": "1"
+		},
+		"Snowflake1_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "yofesqlvm\\yofeadmin"
+		},
+		"TumblingTrigger_properties_pipeline_parameters_windowStart": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"TumblingTrigger_properties_pipeline_parameters_windowEnd": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"yofeSSISIR_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "yofesqldb.database.windows.net"
+		},
+		"yofeSSISIR_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "yofe"
+		},
+		"yofeSSISIR_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"yofeSSISIR_properties_typeProperties_ssisProperties_customSetupScriptProperties_sasToken": {
+			"value": ""
+		}
+	}
+}
