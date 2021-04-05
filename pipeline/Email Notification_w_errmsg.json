@@ -73,7 +73,10 @@
 				"outputs": [
 					{
 						"referenceName": "SqlDimension",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Table": "Test"
+						}
 					}
 				]
 			}
