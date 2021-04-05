@@ -7,7 +7,7 @@
 				"type": "WebActivity",
 				"dependsOn": [
 					{
-						"activity": "Copy data1",
+						"activity": "Stored procedure1",
 						"dependencyConditions": [
 							"Failed"
 						]
@@ -28,14 +28,14 @@
 						"Content-Type": "application/json"
 					},
 					"body": {
-						"value": "{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"PipelineRunID\": \"@{pipeline().RunId}\",\n   \"Subject\": \"The pipeline has completed successfully\",\n   \"ErrorMessage\": \"@{activity('Copy data1').output.errors[0].Message}\",\n    \"Activity\": \"Test\",\n   \"EmailTo\": \"yofe@microsoft.com\"\n}",
+						"value": "{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"PipelineRunID\": \"@{pipeline().RunId}\",\n   \"Subject\": \"The pipeline has completed successfully\",\n   \"ErrorMessage\": \"@{activity('Stored procedure1').output.error.Message}\",\n    \"Activity\": \"Test\",\n   \"EmailTo\": \"yofe@microsoft.com\"\n}",
 						"type": "Expression"
 					}
 				}
 			},
 			{
-				"name": "Copy data1",
-				"type": "Copy",
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -46,39 +46,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "AzureSqlSink"
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
+					"storedProcedureName": "test"
 				},
-				"inputs": [
-					{
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SqlDimension",
-						"type": "DatasetReference",
-						"parameters": {
-							"Table": "Test"
-						}
-					}
-				]
+				"linkedServiceName": {
+					"referenceName": "SqlServer1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"variables": {
