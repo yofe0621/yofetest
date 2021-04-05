@@ -96,11 +96,8 @@
 									"Content-Type": "application/json"
 								},
 								"body": {
-									"EmailTo": "yofe@microsoft.com",
-									"Subject": "An error has occurred pipeline",
-									"DataFactoryName": "PipelineName",
-									"Activity": "Activity",
-									"ErrorMessage": "TestError"
+									"value": "{\n   \"DataFactoryName\": \"@{pipeline().DataFactory}\",\n   \"PipelineName\": \"@{pipeline().Pipeline}\",\n   \"PipelineRunID\": \"@{pipeline().RunId}\",\n   \"Subject\": \"The pipeline has completed successfully\",\n   \"Message\": \"The pipeline has completed successfully\",\n   \"EmailTo\": \"me@myEmail.com\"\n}",
+									"type": "Expression"
 								}
 							}
 						}
